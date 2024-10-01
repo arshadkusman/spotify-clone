@@ -92,6 +92,8 @@ class NewsSongs extends StatelessWidget {
                     songs[index].title,
                     style: const TextStyle(
                         fontWeight: FontWeight.w600, fontSize: 16),
+                    maxLines: 1,
+                    overflow: TextOverflow.ellipsis,
                   ),
                   const SizedBox(
                     height: 5,
@@ -100,6 +102,8 @@ class NewsSongs extends StatelessWidget {
                     songs[index].artist,
                     style: const TextStyle(
                         fontWeight: FontWeight.w400, fontSize: 12),
+                    maxLines: 1,
+                    overflow: TextOverflow.ellipsis,
                   )
                 ],
               ),

@@ -25,6 +25,7 @@ dependencies:
   cloud_firestore:
   just_audio:
   flutter_native_splash: ^2.4.1
+  shared_preferences: ^2.3.2
 
 dev_dependencies:
   flutter_test:
