@@ -3,42 +3,32 @@ import 'package:just_audio/just_audio.dart';
 import 'package:spotify/presentation/song_player/bloc/song_player_state.dart';
 
 class SongPlayerCubit extends Cubit<SongPlayerState> {
-
   AudioPlayer audioPlayer = AudioPlayer();
 
   Duration songDuration = Duration.zero;
   Duration songPosition = Duration.zero;
 
   SongPlayerCubit() : super(SongPlayerLoading()) {
-
-    audioPlayer.positionStream.listen((position) { 
+    audioPlayer.positionStream.listen((position) {
       songPosition = position;
       updateSongPlayer();
     });
 
-    audioPlayer.durationStream.listen((duration) { 
+    audioPlayer.durationStream.listen((duration) {
       songDuration = duration!;
     });
   }
 
   void updateSongPlayer() {
-    emit(
-      SongPlayerLoaded()
-    );
+    emit(SongPlayerLoaded());
   }
 
-
-  Future<void> loadSong(String url) async{
-    print(url);
+  Future<void> loadSong(String url) async {
     try {
       await audioPlayer.setUrl(url);
-      emit(
-        SongPlayerLoaded()
-      );
-    } catch(e){
-      emit(
-        SongPlayerFailure()
-      );
+      emit(SongPlayerLoaded());
+    } catch (e) {
+      emit(SongPlayerFailure());
     }
   }
 
@@ -48,11 +38,9 @@ class SongPlayerCubit extends Cubit<SongPlayerState> {
     } else {
       audioPlayer.play();
     }
-    emit(
-      SongPlayerLoaded()
-    );
+    emit(SongPlayerLoaded());
   }
-  
+
   @override
   Future<void> close() {
     audioPlayer.dispose();

@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:spotify/common/helpers/is_dark_mode.dart';
-import 'package:spotify/common/widgets/appbar/app_bar.dart';
 import 'package:spotify/presentation/auth/pages/signup_or_siginin.dart';
 import 'package:spotify/presentation/profile/bloc/favorite_songs_cubit.dart';
 import 'package:spotify/presentation/profile/bloc/favorite_songs_state.dart';

@@ -37,7 +37,6 @@ class SongFirebaseServiceImpl extends SongFirebaseService {
 
       return Right(songs);
     } catch (e) {
-      print(e);
       return const Left('An error occurred, Please try again.');
     }
   }
@@ -62,7 +61,6 @@ class SongFirebaseServiceImpl extends SongFirebaseService {
 
       return Right(songs);
     } catch (e) {
-      print(e);
       return const Left('An error occurred, Please try again.');
     }
   }
@@ -153,7 +151,6 @@ class SongFirebaseServiceImpl extends SongFirebaseService {
 
       return Right(favoriteSongs);
     } catch (e) {
-      print(e);
       return const Left('An error occurred');
     }
   }
